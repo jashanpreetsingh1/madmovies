@@ -1,0 +1,228 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MMDB</title>
+  <link rel="stylesheet" href="assets/css/foundation.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css" />
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+
+<body>
+
+  <!-- HEADER-->
+  <header class="header_background">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x align-middle">
+
+        <!-- LEFT: Logo / Home -->
+        <div class="cell large-3 medium-4 small-12">
+          <div class="box gray click-home pointer height-header">
+            <img src="./assets/images/Asset 1.png" alt="MMDB logo">
+            <h3 class="box-text">MMDB</h3>
+          </div>
+        </div>
+
+        <!-- MIDDLE: Search (IMPORTANT: professor structure for JS/search.php) -->
+        <div class="cell large-6 medium-4 small-12">
+          <!-- no click-movies here, otherwise clicking opens movie route -->
+          <div class="box gray2 height-header search-box">
+            <span class="box-text">Search</span>
+            <div class="search-container">
+              <!-- id="search" must match JS -->
+              <input type="text" id="search" value="" placeholder="Search movies or people...">
+              <!-- search-results for dropdown, JS fills <li> -->
+              <ul class="search-results hideAll">
+                <!-- Results come from getSearch() in main.js -->
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Profile (your styling only, JS doesn’t use it) -->
+        <div class="cell large-3 medium-4 small-12">
+          <div class="box gray2 height-header user-icon pointer">
+            <p class="box-text">Profile</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="grid-container">
+    <div class="grid-x">
+
+      <!-- HOME PAGE -->
+      <article class="cell large-12 small-12 gray1 box2 home-show hideAll">
+        <div class="grid-x grid-margin-x grid-margin-y grid-padding-x grid-padding-y">
+          <div class="cell large-12">Our Latest Movies</div>
+
+          <div class="cell large-12">
+            <!-- JS will inject movie cards here from home.php -->
+            <div class="grid-x grid-margin-x grid-margin-y grid-padding-x grid-padding-y home-container">
+
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- MOVIE DETAILS PAGE -->
+      <article class="cell large-12 small-12 gray2 box2 movies-show hideAll">
+        <div class="grid-x grid-margin-x grid-margin-y grid-padding-x grid-padding-y">
+          <!-- LEFT: Poster -->
+          <div class="cell large-6 small-12">
+            <div class="callout height-1 gray4">
+              <div class="movie-poster">
+                <img class="movie-image" src="./assets/images/poster.png" alt="Movie Poster">
+              </div>
+            </div>
+          </div>
+
+          <div class="cell large-6 small-12">
+            <div class="callout height-1 gray4">
+              <div class="detail-panel movie-details">
+                <!-- Title -->
+                <h1 class="detail-heading movie-name">Movie</h1>
+          
+                <!-- Label / value rows -->
+                <div class="detail-grid">
+                  <div class="detail-label">Release Date:</div>
+                  <div class="detail-value movie-release-date">1999</div>
+          
+                  <div class="detail-label movie-genre-container">Genre:</div>
+                  <div class="detail-value movie-genre-container">
+                    <span class="movie-genre">1999</span>
+                  </div>
+                </div>
+          
+                <!-- Description -->
+                <p class="detail-text movie-description">
+                  Description
+                </p>
+          
+                <!-- Trailer -->
+                <div class="movie-trailer">
+                  <iframe class="movie-youtube" width="400" height="315" src="https://www.youtube.com/embed/VIDEO_ID"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CAST SLIDER -->
+        <div class="grid-x grid-margin-x grid-margin-y grid-padding-x grid-padding-y ">
+          <div class="cell large-12 movie-actors">
+            <!-- JS fills this with cast cards from movie.php -->
+          </div>
+        </div>
+
+        <!-- SCREENSHOTS SECTION (from movie.php)
+        <div class="grid-x grid-margin-x grid-margin-y grid-padding-x grid-padding-y">
+          <div class="cell large-12 movie-screen-shot">
+          < </div> -->
+        <!-- </div> --> 
+
+        <!-- RELATED MOVIES SECTION (from movie.php) -->
+        <!-- RELATED MOVIES SECTION (from movie.php) -->
+      <div class="grid-x grid-margin-x grid-margin-y grid-padding-x grid-padding-y">
+        <div class="cell large-12">
+          <h3 class="related-title">More Movies</h3>
+          <!-- This behaves like Home: it is the grid row -->
+          <div class="grid-x grid-margin-x grid-margin-y grid-padding-x grid-padding-y movie-related-movies">
+            <!-- JS will put movie cards here -->
+          </div>
+        </div>
+      </div>
+      </article>
+
+      <!-- PEOPLE DETAILS PAGE -->
+           <!-- PEOPLE DETAILS PAGE -->
+            <!-- PEOPLE DETAILS PAGE -->
+            <article class="cell large-12 small-12 gray2 box2 people-show hideAll">
+              <div class="grid-x grid-margin-x grid-margin-y grid-padding-x grid-padding-y">
+                <div class="cell large-12">People</div>
+      
+                <!-- LEFT: main portrait -->
+                <div class="cell large-6 small-12">
+                  <div class="callout height-1 gray4">
+                    <div class="movie-poster">
+                      <img class="people-image" src="./assets/images/poster.png" alt="People Poster">
+                    </div>
+                  </div>
+                </div>
+      
+                <!-- RIGHT: info -->
+            <div class="cell large-6 small-12">
+              <div class="callout height-1 gray4">
+                <div class="detail-panel people-details">
+       <!-- Name -->
+                  <h1 class="detail-heading people-name">Actor</h1>
+
+        <!-- Label / value rows -->
+                  <div class="detail-grid">
+                    <div class="detail-label">Born:</div>
+                    <div class="detail-value people-born">01 January 1970</div>
+
+                    <div class="detail-label">Died:</div>
+                    <div class="detail-value people-died">I'm Alive!</div>
+                  </div>
+
+                  <!-- Bio -->
+                  <p class="detail-text people-biography">
+                    Biography
+                  </p>
+                </div>
+              </div>
+            </div>
+
+              </div>
+      
+      
+              <!-- FILMS THIS PERSON APPEARS IN -->
+              <div class="grid-x grid-margin-x grid-margin-y grid-padding-x grid-padding-y">
+                <div class="cell large-12">
+                  <h3 class="related-title">More Movies</h3>
+                  <!-- This behaves like Home: it is the grid row -->
+                  <div class="grid-x grid-margin-x grid-margin-y grid-padding-x grid-padding-y movie-related-movies">
+                    <!-- JS will put movie cards here -->
+                  </div>
+                </div>
+              </div>
+            </article>
+      
+    
+
+    </div>
+  </main>
+
+  <!-- FOOTER (your design) -->
+  <footer class="site-footer">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x align-middle footer-row">
+        <div class="cell auto footer-item">© 2025 Mad Movies</div>
+        <div class="cell auto footer-item">All data and images are for educational purposes only.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS (order same as professor’s) -->
+  <script src="assets/js/vendor.js"></script>
+  <script src="assets/js/foundation.js"></script>
+  <script src="assets/js/sammy.min.js" type="text/javascript"></script>
+  <script src="assets/js/sammy.template.js" type="text/javascript"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="assets/js/slick.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
